@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div>
       {/* Navbar */}
-      <nav className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-700 via-gray-900 to-black pb-2 pt-4 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30">
-        <p className="font-bold text-center text-xl">BlockIoT</p>
+      <nav className="flex items-center justify-between p-8 bg-gradient-to-r from-gray-700 via-gray-900 to-black pb-2 pt-4 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30">
+        <p className="font-bold text-center text-2xl">BlockIoT</p>
         {/* Add any additional navbar items or links here */}
       </nav>
 
@@ -35,37 +35,37 @@ export default function Home() {
         {/* How It Works Section */}
         <section className="flex flex-col items-center mb-16">
           <h2 className="text-3xl font-bold mb-8">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Box 1 */}
-            <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md">
+            <div className="flex flex-col items-center   bg-transparent p-6 rounded-lg">
               <Image
-                src="/icon1.png" // Replace with your actual image path
+                src="/step1.png" // Replace with your actual image path
                 alt="Icon 1"
-                width={64}
-                height={64}
+                width={256}
+                height={256}
               />
-              <p className="text-lg font-bold mt-4">Step 1</p>
-              <p className="text-gray-300 text-center">
-                Describe the first step here.
+              <p className="text-lg font-bold mt-4"></p>
+              <p className="text-gray-300 text-lg  text-center px-12">
+                User creates Applets that are basically NFT's containing all the data regarding the IoT device intented to be controlled.
               </p>
             </div>
 
             {/* Box 2 */}
-            <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md">
+            <div className="flex flex-col items-center  bg-transparent p-6 rounded-lg">
               <Image
-                src="/icon2.png" // Replace with your actual image path
+                src="/step2.png" // Replace with your actual image path
                 alt="Icon 2"
-                width={64}
-                height={64}
+                width={256}
+                height={256}
               />
-              <p className="text-lg font-bold mt-4">Step 2</p>
-              <p className="text-gray-300 text-center">
-                Describe the second step here.
+              <p className="text-lg font-bold mt-4"></p>
+              <p className="text-gray-300 text-lg  text-center">
+                The user with NFT Applets, will be granted access to control the IoT Device through the execution page. 
               </p>
             </div>
 
             {/* Box 3 */}
-            <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md">
+            {/* <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md">
               <Image
                 src="/icon3.png" // Replace with your actual image path
                 alt="Icon 3"
@@ -76,7 +76,7 @@ export default function Home() {
               <p className="text-gray-300 text-center">
                 Describe the third step here.
               </p>
-            </div>
+            </div> */}
           </div>
         </section>
 
