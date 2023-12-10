@@ -6,6 +6,8 @@ import NftDetails from '../components/nftDetails';
 import Footer from "@/components/footer";
 
 export default function Home() {
+
+
   // console.log("entred home");
   const [eventDetail, setEventDetail] = useState(null);
   const [pagedata, setPageData] = useState(null);
