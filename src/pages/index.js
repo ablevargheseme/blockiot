@@ -23,7 +23,7 @@ export default function Home() {
           <div className="relative w-96 h-96">
             {/* Add your image here */}
             <Image
-              src="/hero.png" // Replace with your actual image path
+              src="/hero.gif" // Replace with your actual image path
               alt="Your Image Alt Text"
               layout="fill"
               objectFit="cover"
