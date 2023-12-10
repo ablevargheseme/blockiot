@@ -24,16 +24,17 @@ export default function Home() {
     };
 
     // Get the event ID from the URL
-    const eventId = getParameterByName('eventid');
+    const eventId = getParameterByName('id');
 
     // Fetch event details based on the eventId
     const fetchEventDetails = async () => {
       try {
         // Replace the following API URL with your actual API endpoint
-        const apiUrl = `https://api.example.com/events/${eventId}`;
+        const apiUrl = `api/events?id=${eventId}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
-        setEventDetail(data);
+        console.log("data", data);
+        //   setEventDetail(data);
       } catch (error) {
         console.error('Error fetching event details:', error);
       }
@@ -41,10 +42,10 @@ export default function Home() {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('https://mocki.io/v1/152ffe0e-6219-4293-9b51-ef04eef47f51');
+        const response = await fetch(`api/eventsbyid?id=${eventId}`);
         const data1 = await response.json();
-        console.log("Json Data:", data1);
-        setPageData(data1);
+        console.log("Json Data:", data1.documents[0]);
+        setPageData(data1.documents[0]);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -54,18 +55,18 @@ export default function Home() {
 
 
     if (eventId) {
-      console.log("Event ID:",eventId);
-      
+      console.log("Event ID:", eventId);
+
       //fetchEventDetails();
     }
   }, []); // Run this effect only once on page load
-  
-  const devname = pagedata?.device?.device_name ?? 'N/A';
-  const devdesc = pagedata?.device?.device_description ?? 'N/A';
-  const nftname = pagedata?.NFT?.NFT_name ?? 'N/A';
-  const nfturl = pagedata?.NFT?.NFT_url ?? 'N/A';
 
-   
+  const devname = pagedata?.appletName ?? 'N/A';
+  const devdesc = pagedata?.appletDescription ?? 'N/A';
+  const nftname = pagedata?.appletDescription ?? 'N/A';
+  const nfturl = "https://i.ibb.co/kMxfN25/vmcopy.jpg";
+
+
   return (
     <div className="bg-black">
       <Head>
@@ -77,26 +78,26 @@ export default function Home() {
       <NavBar2 />
 
       <div className="md:mx-0 mx-7">
-        {pagedata&&(
-          
+        {pagedata && (
+
           <div>
-          <Bulb
-          deviceDescription={devdesc}
-          devicName= {devname} />
-        </div>
+            <Bulb
+              deviceDescription={devdesc}
+              devicName={devname} />
+          </div>
         )}
-        
+
 
         <div className='mt-20'>
           {/* Pass eventDetail as a prop to NftDetails component */}
-          {pagedata &&(
+          {pagedata && (
             <NftDetails
-            nftName={nftname}
-            nftUrl={nfturl}
-             eventDetail={eventDetail}
-              />
+              nftName={nftname}
+              nftUrl={nfturl}
+              eventDetail={eventDetail}
+            />
           )}
-          
+
         </div>
       </div>
 

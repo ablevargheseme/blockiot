@@ -10,51 +10,51 @@ import BigConnect from "./bigConnect";
 import Popup from "./popup";
 
 
-export default function Bulb({devicName, deviceDescription}) {
+export default function Bulb({ devicName, deviceDescription }) {
 
 
   const videoRef = useRef(null);
 
-    const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(false);
 
-    function handleClick() {
-      //setIsOn(true);
-     // setIsOn(true);
-      videoRef.current.playbackRate = 7;
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
-    function handleClick1() {
-      //setIsOn(false);
-      videoRef.current.currentTime = 0;
-      videoRef.current.pause();
-     // videoRef.current.play();
-      // setTimeout(() => {
-      //   videoRef.current.pause();
-      // }, 1000);
-    }
+  function handleClick() {
+    //setIsOn(true);
+    // setIsOn(true);
+    videoRef.current.playbackRate = 7;
+    videoRef.current.currentTime = 0;
+    videoRef.current.play();
+  }
+  function handleClick1() {
+    //setIsOn(false);
+    videoRef.current.currentTime = 0;
+    videoRef.current.pause();
+    // videoRef.current.play();
+    // setTimeout(() => {
+    //   videoRef.current.pause();
+    // }, 1000);
+  }
 
-    const { isConnected } = useAccount()
-    
-    //const { isSigned , isNft , loading , popup } = useContext(DataContext)
+  const { isConnected } = useAccount()
 
-    // console.log(isSigned)
-    //console.log(isNft)
-    console.log(isConnected)
-    
-    return(
-      
-      <div className=" md:flex md:justify-evenly md:px-11 relative">
+  //const { isSigned , isNft , loading , popup } = useContext(DataContext)
 
-        <div className="lg:w-1/2 md:w-2/3 md:px-10">
-          <div className="md:text-6xl md:font-extrabold text-3xl font-bold font-Outfit lg:mt-36 mt-6 md:text-left text-center">{deviceDescription}</div>
-          <div className="text-lg font-semibold lg:my-7 my-5 relative md:text-left text-center">Device Name : {devicName}</div>
-          <div className="lg:my-8 my-3 flex justify-center md:justify-start"><BigConnect/></div>
-        </div>
+  // console.log(isSigned)
+  //console.log(isNft)
+  console.log(isConnected)
 
-        <div className="bg-ellipse-2"></div>
+  return (
 
-        <div className="flex justify-center">
+    <div className=" md:flex md:justify-evenly md:px-11 relative">
+
+      <div className="lg:w-1/2 md:w-2/3 md:px-10">
+        <div className="md:text-6xl md:font-extrabold text-3xl font-bold font-Outfit lg:mt-36 mt-6 md:text-left text-center">{deviceDescription}</div>
+        <div className="text-lg font-semibold lg:my-7 my-5 relative md:text-left text-center">Applet : {devicName}</div>
+        <div className="lg:my-8 my-3 flex justify-center md:justify-start"><BigConnect /></div>
+      </div>
+
+      <div className="bg-ellipse-2"></div>
+
+      <div className="flex justify-center">
         <div className="device-card relative flex flex-col items-center w-fit">
           {/* <div className="relative flex justify-center bg-[#010922] w-10/12 md:my-7 mt-4 rounded-3xl">
             {isOn ? <div className="md:w-full w-56 md:h-full"><img src={'/bulb2.png'} className=""/></div> : 
@@ -73,9 +73,9 @@ export default function Bulb({devicName, deviceDescription}) {
           </div>} */}
           </div>
         </div>
-        </div>
+      </div>
 
-        {/* { loading && 
+      {/* { loading && 
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="popup-bg p-8 rounded-md flex">
               <div className="flex items-center mb-2 mr-3">
@@ -85,7 +85,7 @@ export default function Bulb({devicName, deviceDescription}) {
             </div>
           </div>
         } */}
-{/* 
+      {/* 
 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="popup-bg p-8 rounded-md flex">
               <div className="flex items-center mb-2 mr-3">
@@ -99,7 +99,7 @@ export default function Bulb({devicName, deviceDescription}) {
           <Popup duration={2000}/>
         </div>} */}
 
-      </div>
-          
-    );
+    </div>
+
+  );
 }
